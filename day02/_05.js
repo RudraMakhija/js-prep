@@ -23,4 +23,4 @@ function HigherOrder2(){
 HigherOrder1(function() { console.log("Hello world") }); // Hello world
 
 let result= HigherOrder2()
-console.log(result()) // dp something
+console.log(result()) // do something
