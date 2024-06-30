@@ -19,7 +19,7 @@ b= 25
 console.log(b)
 var b
 
-// Example 3: variables declared with 'let' are hoisted to the top of their block scope, but they are not initialised. The period b/w start of the block and declaration is known as temporal dead zone.
+// Example 3: variables declared with 'let' and 'const' are hoisted to the top of their block scope, but they are not initialised. They are hoisted in the temporal dead zone. The period b/w start of the block and declaration is known as temporal dead zone.
 console.log(x); // ReferenceError: Cannot access 'x' before initialization
 let x = 10;
 console.log(x); // 10
