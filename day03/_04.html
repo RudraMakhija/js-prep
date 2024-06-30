@@ -1,0 +1,54 @@
+<!-- 
+Explain about Debouncing in Javascript. 
+-->
+
+
+
+<!-- 
+Debouncing is basically a concept that is used to tackle a problem of unnecessary function calls.
+
+For Ex:-
+When we go to the flipkart website and we search product in the the search bar, So the function call is made when
+we stop typing. The function call is made after few milliseconds depending upon the business requirement.
+
+if we search laptop
+then only function call is made, after typing the whole word laptop i.e. when we stop typing.
+No function calls are made till we continuously type letters l,a,p,t,o
+we stop on p letter, so then the function call is made.
+
+This implementation prevents getData from being called too frequently while the user is typing, reducing
+unnecessary function calls and potential data fetching operations.
+-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debouncing</title>
+</head>
+<body>
+    <input type="text" id="search" onkeyup="betterFunction()">
+
+    <script>
+        let count=0;
+        function getData(){
+            console.log("fetching data "+ count++)
+        }
+        function myDebounce(callback, delay){
+            let timer;
+            return function(...args){
+                if(timer) clearTimeout(timer)
+
+                timer= setTimeout(()=>{
+                    callback()
+                }, delay)
+            }
+        }
+        const betterFunction= myDebounce(getData, 1000)
+    </script>
+</body>
+</html>
+
